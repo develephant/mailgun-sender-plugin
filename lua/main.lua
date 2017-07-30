@@ -1,27 +1,20 @@
--- 
--- Abstract: mailgun-sender Library Plugin Test Project
--- 
--- Sample code is MIT licensed, see http://www.coronalabs.com/links/code/license
--- Copyright (C) 2015 Corona Labs Inc. All Rights Reserved.
---
-------------------------------------------------------------
+--#############################################################################
+--# MailGun sender plugin
+--#(c)2017 C. Byerley (develephant.com)
+--#############################################################################
 
--- Load plugin library
 local mailgun = require "plugin.mailgun-sender"
 
-local mg_key = "key-4fbda5dca9b40f5a824a2802f6984920"
-local mg_domain = "sandbox837048be26554cd6b6802684fa1f6ef4.mailgun.org"
+local mg_key = "<mailgun-api-key"
+local mg_domain = "<mailgun-sending-domain>"
 
 local msg = mailgun.new( mg_key, mg_domain )
 
-msg:to( "Chris <cbyerley@develephant.com>" )
-msg:from( "cbyerley@gmail.com" )
-msg:subject( "Hello from my testing account." )
-msg:text( "This is a text message version of the email." )
-msg:html( "<b>Hello this is a html testing content.</b>" )
-msg:tag("appmail")
-msg:testMode( true )
-msg:requireTls( true )
+msg:to( "Chris <from-email-address>" )
+msg:from( "<to-email-address>" )
+msg:subject( "This is a MailGun message." )
+msg:text( "This is the text version of the email." )
+msg:html( "<b>This is the html version of the email.</b>" )
 
 local function onSendResult( evt )
   if evt.isError then

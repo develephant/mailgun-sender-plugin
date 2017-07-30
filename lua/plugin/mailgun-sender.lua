@@ -1,6 +1,9 @@
+--#############################################################################
+--# MailGun sender plugin
+--#(c)2017 C. Byerley (develephant.com)
+--#############################################################################
 local Library = require "CoronaLibrary"
 
--- Create library
 local lib = Library:new{ name='mailgun-sender', publisherId='com.develephant' }
 
 local mime = require("mime")
@@ -148,5 +151,4 @@ function lib.new( key, domain )
   return msgObj
 end
 
--- Return library instance
 return lib
