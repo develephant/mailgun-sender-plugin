@@ -1,0 +1,124 @@
+{
+    "docs": [
+        {
+            "location": "/",
+            "text": "MailGun Sender\n\n\nA simple \nMailGun\n plugin for sending email with \nCorona\n.\n\n\n\n\nNote\n\n\nThis plugin provides limited support for the MailGun API. In particular, there is no support for attachments or inline images.\n\n\n\n\nGet the Plugin\n\n\nYou will need the \nMailGun Sender\n plugin available in the \nCorona Marketplace\n.\n\n\nAdd the Plugin\n\n\nAdd the plugin by adding an entry to the plugins table of your \nbuild.settings\n file:\n\n\nsettings\n \n=\n\n\n{\n\n    \nplugins\n \n=\n\n    \n{\n\n        \n[\n\"plugin.mailgun-sender\"\n]\n \n=\n\n        \n{\n\n            \npublisherId\n \n=\n \n\"com.develephant\"\n\n        \n}\n,\n    \n}\n,\n\n}\n\n\n\n\n\n\nLoad the Plugin\n\n\nIn your project \"require\" the plugin:\n\n\nlocal\n \nmailgun\n \n=\n \nrequire\n(\n\"plugin.mailgun-sender\"\n)\n\n\n\n\n\n\nYou're now ready to use the \nMailGun Sender\n plugin in your project.",
+            "title": "Introduction"
+        },
+        {
+            "location": "/#mailgun-sender",
+            "text": "A simple  MailGun  plugin for sending email with  Corona .   Note  This plugin provides limited support for the MailGun API. In particular, there is no support for attachments or inline images.",
+            "title": "MailGun Sender"
+        },
+        {
+            "location": "/#get-the-plugin",
+            "text": "You will need the  MailGun Sender  plugin available in the  Corona Marketplace .",
+            "title": "Get the Plugin"
+        },
+        {
+            "location": "/#add-the-plugin",
+            "text": "Add the plugin by adding an entry to the plugins table of your  build.settings  file:  settings   =  { \n     plugins   = \n     { \n         [ \"plugin.mailgun-sender\" ]   = \n         { \n             publisherId   =   \"com.develephant\" \n         } ,\n     } , }",
+            "title": "Add the Plugin"
+        },
+        {
+            "location": "/#load-the-plugin",
+            "text": "In your project \"require\" the plugin:  local   mailgun   =   require ( \"plugin.mailgun-sender\" )   You're now ready to use the  MailGun Sender  plugin in your project.",
+            "title": "Load the Plugin"
+        },
+        {
+            "location": "/api/",
+            "text": "MailGun Sender\n\n\n\n\nnew\n\n\nCreate a new MailGun message object.\n\n\nSyntax\n\n\nmailgun\n.\nnew\n(\n \nkey\n,\n \ndomain\n \n)\n\n\n\n\n\n\nReturns\n\n\nA new message object.\n\n\nParameters\n\n\n\n\n\n\n\n\nName\n\n\nDescription\n\n\nType\n\n\nRequired\n\n\n\n\n\n\n\n\n\n\nkey\n\n\nYour MailGun API key.\n\n\nString\n\n\nY\n\n\n\n\n\n\ndomain\n\n\nYour verified MailGun domain.\n\n\nString\n\n\nY\n\n\n\n\n\n\n\n\nExample\n\n\nlocal\n \nmsg\n \n=\n \nmailgun\n.\nnew\n(\n \n\"key-abcdef12345\"\n,\n \n\"verified.mailgun.domain\"\n \n)\n\n\n\n\n\n\nNote\n\n\nYou can create multple instances of the message object:\n\n\nlocal\n \nmsg1\n \n=\n \nmailgun\n.\nnew\n(\nkey\n,\n \ndomain\n)\n\n\nlocal\n \nmsg2\n \n=\n \nmailgun\n.\nnew\n(\nkey\n,\n \ndomain\n)\n\n\n\n\n\n\n\n\nMessage Object\n\n\n\n\n:to\n\n\nThe address(es) to send the message to. Multiple values must be seperated by a comma. \nThis is a required value\n.\n\n\nSyntax\n\n\nmsg\n:\nto\n(\n \naddress\n[,\n \naddressN\n]\n \n)\n\n\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nName\n\n\nDescription\n\n\nType\n\n\n\n\n\n\n\n\n\n\naddress\n\n\nThe recipient address(es).\n\n\nString\n\n\n\n\n\n\n\n\nExamples\n\n\nSingle address:\n\n\n--Address only\n\n\nmsg\n:\nto\n(\n\"user@email.com\"\n)\n\n\n\n--With name\n\n\nmsg\n:\nto\n(\n\"Chris <user@email.com>\"\n)\n\n\n\n\n\n\nMultiple addresses:\n\n\nmsg\n:\nto\n(\n\"user1@email.com\"\n,\n \n\"Jim <user2@email.com>\"\n)\n\n\n\n\n\n\n\n\n:from\n\n\nThe message sender address. \nThis is a required value\n.\n\n\nSyntax\n\n\nmsg\n:\nfrom\n(\n \naddress\n \n)\n\n\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nName\n\n\nDescription\n\n\nType\n\n\n\n\n\n\n\n\n\n\naddress\n\n\nThe sender address.\n\n\nString\n\n\n\n\n\n\n\n\nExample\n\n\nmsg\n:\nfrom\n(\n\"sender@email.com\"\n)\n\n\n\n\n\n\n\n\n:cc\n\n\nThe address(es) to \"cc\" the message to. Multiple values must be seperated by a comma.\n\n\nSyntax\n\n\nmsg\n:\ncc\n(\n \naddress\n[,\n \naddressN\n]\n \n)\n\n\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nName\n\n\nDescription\n\n\nType\n\n\n\n\n\n\n\n\n\n\naddress\n\n\nThe \"cc\" address(es).\n\n\nString\n\n\n\n\n\n\n\n\nExamples\n\n\nSingle address:\n\n\n--Address only\n\n\nmsg\n:\ncc\n(\n\"user@email.com\"\n)\n\n\n\n--With name\n\n\nmsg\n:\ncc\n(\n\"Chris <user@email.com>\"\n)\n\n\n\n\n\n\nMultiple addresses:\n\n\nmsg\n:\ncc\n(\n\"user1@email.com\"\n,\n \n\"Jim <user2@email.com>\"\n)\n\n\n\n\n\n\n\n\n:bcc\n\n\nThe address(es) to \"bcc\" the message to. Multiple values must be seperated by a comma.\n\n\nSyntax\n\n\nmsg\n:\nbcc\n(\n \naddress\n[,\n \naddressN\n]\n \n)\n\n\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nName\n\n\nDescription\n\n\nType\n\n\n\n\n\n\n\n\n\n\naddress\n\n\nThe \"bcc\" address(es).\n\n\nString\n\n\n\n\n\n\n\n\nExamples\n\n\nSingle address:\n\n\n--Address only\n\n\nmsg\n:\nbcc\n(\n\"user@email.com\"\n)\n\n\n\n--With name\n\n\nmsg\n:\nbcc\n(\n\"Chris <user@email.com>\"\n)\n\n\n\n\n\n\nMultiple addresses:\n\n\nmsg\n:\nbcc\n(\n\"user1@email.com\"\n,\n \n\"Jim <user2@email.com>\"\n)\n\n\n\n\n\n\n\n\n:replyTo\n\n\nSets a specific reply-to address. If not set, the sender address is the default.\n\n\nSyntax\n\n\nmsg\n:\nreplyTo\n(\n \naddress\n \n)\n\n\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nName\n\n\nDescription\n\n\nType\n\n\n\n\n\n\n\n\n\n\naddress\n\n\nA specific reply-to address.\n\n\nString\n\n\n\n\n\n\n\n\nExample\n\n\nmsg\n:\nreplyTo\n(\n\"Support <support@email.com>\"\n)\n\n\n\n\n\n\n\n\n:subject\n\n\nThe subject line for the email. The default is \"(no subject)\" if not provided.\n\n\nSyntax\n\n\nmsg\n:\nsubject\n(\n \nsubject_str\n \n)\n\n\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nName\n\n\nDescription\n\n\nType\n\n\n\n\n\n\n\n\n\n\nsubject_str\n\n\nThe subject title.\n\n\nString\n\n\n\n\n\n\n\n\nExample\n\n\nmsg\n:\nsubject\n(\n\"A Super Email\"\n)\n\n\n\n\n\n\n\n\n:text\n\n\nThe plain text version of the message body.\n\n\nSyntax\n\n\nmsg\n:\ntext\n(\n \nmessage_str\n \n)\n\n\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nName\n\n\nDescription\n\n\nType\n\n\n\n\n\n\n\n\n\n\nmessage_str\n\n\nA plain string message.\n\n\nString\n\n\n\n\n\n\n\n\nExample\n\n\nmsg\n:\ntext\n(\n\"Here is your plain information.\"\n)\n\n\n\n\n\n\n\n\n:html\n\n\nThe html version of the message body.\n\n\nSyntax\n\n\nmsg\n:\nhtml\n(\n \nmessage_html\n \n)\n\n\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nName\n\n\nDescription\n\n\nType\n\n\n\n\n\n\n\n\n\n\nmessage_html\n\n\nAn html string message.\n\n\nString\n\n\n\n\n\n\n\n\nExample\n\n\nmsg\n:\nhtml\n(\n\"Here is your <b>bold</b> information.\"\n)\n\n\n\n\n\n\n\n\n:tag\n\n\nSets a specific tag for the email. Can be used for tracking in MailGun.\n\n\nSyntax\n\n\nmsg\n:\ntag\n(\n \ntag_str\n \n)\n\n\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nName\n\n\nDescription\n\n\nType\n\n\n\n\n\n\n\n\n\n\ntag_str\n\n\nA string tag for tracking.\n\n\nString\n\n\n\n\n\n\n\n\nExample\n\n\nmsg\n:\ntag\n(\n\"appuser\"\n)\n\n\n\n\n\n\n\n\n:requireTls\n\n\nForce MailGun to use TLS when sending the message. Defaults to \nfalse\n.\n\n\nSyntax\n\n\nmsg\n:\nrequireTls\n(\n \nbool\n \n)\n\n\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nName\n\n\nDescription\n\n\nType\n\n\n\n\n\n\n\n\n\n\nbool\n\n\nWhether to enable TLS for this message.\n\n\nBoolean\n\n\n\n\n\n\n\n\nExample\n\n\nmsg\n:\nrequireTls\n(\ntrue\n)\n\n\n\n\n\n\n\n\n:skipVerification\n\n\nSkip certificate verification when using TLS. Defaults to \nfalse\n.\n\n\nSyntax\n\n\nmsg\n:\nskipVerification\n(\n \nbool\n \n)\n\n\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nName\n\n\nDescription\n\n\nType\n\n\n\n\n\n\n\n\n\n\nbool\n\n\nWhether to skip verification in TLS.\n\n\nBoolean\n\n\n\n\n\n\n\n\nExample\n\n\nmsg\n:\nskipVerification\n(\ntrue\n)\n\n\n\n\n\n\n\n\n:testMode\n\n\nUsed for debugging in MailGun. Defaults to \nfalse\n.\n\n\nSyntax\n\n\nmsg\n:\ntestMode\n(\n \nbool\n \n)\n\n\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nName\n\n\nDescription\n\n\nType\n\n\n\n\n\n\n\n\n\n\nbool\n\n\nWhether to enable test mode.\n\n\nBoolean\n\n\n\n\n\n\n\n\nExample\n\n\nmsg\n:\ntestMode\n(\ntrue\n)\n\n\n\n\n\n\n\n\n:send\n\n\nSend the final message via MailGun.\n\n\nSyntax\n\n\nmsg\n:\nsend\n(\n \n[\nlistener\n]\n \n)\n\n\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nName\n\n\nDescription\n\n\nType\n\n\nRequired\n\n\n\n\n\n\n\n\n\n\nlistener\n\n\nA network listener function.\n\n\nFunction\n\n\nN\n\n\n\n\n\n\n\n\nExample\n\n\nlocal\n \nfunction\n \nonSendResponse\n(\n \nevt\n \n)\n\n  \nif\n \nevt\n.\nisError\n \nthen\n\n    \nprint\n(\nevt\n.\nerror\n)\n\n  \nelse\n\n    \nprint\n(\nevt\n.\nresponse\n)\n\n  \nend\n\n\nend\n\n\n\nmsg\n:\nsend\n(\nonSendResponse\n)",
+            "title": "Plugin API"
+        },
+        {
+            "location": "/api/#mailgun-sender",
+            "text": "",
+            "title": "MailGun Sender"
+        },
+        {
+            "location": "/api/#new",
+            "text": "Create a new MailGun message object.  Syntax  mailgun . new (   key ,   domain   )   Returns  A new message object.  Parameters     Name  Description  Type  Required      key  Your MailGun API key.  String  Y    domain  Your verified MailGun domain.  String  Y     Example  local   msg   =   mailgun . new (   \"key-abcdef12345\" ,   \"verified.mailgun.domain\"   )   Note  You can create multple instances of the message object:  local   msg1   =   mailgun . new ( key ,   domain )  local   msg2   =   mailgun . new ( key ,   domain )",
+            "title": "new"
+        },
+        {
+            "location": "/api/#message-object",
+            "text": "",
+            "title": "Message Object"
+        },
+        {
+            "location": "/api/#to",
+            "text": "The address(es) to send the message to. Multiple values must be seperated by a comma.  This is a required value .  Syntax  msg : to (   address [,   addressN ]   )   Parameters     Name  Description  Type      address  The recipient address(es).  String     Examples  Single address:  --Address only  msg : to ( \"user@email.com\" )  --With name  msg : to ( \"Chris <user@email.com>\" )   Multiple addresses:  msg : to ( \"user1@email.com\" ,   \"Jim <user2@email.com>\" )",
+            "title": ":to"
+        },
+        {
+            "location": "/api/#from",
+            "text": "The message sender address.  This is a required value .  Syntax  msg : from (   address   )   Parameters     Name  Description  Type      address  The sender address.  String     Example  msg : from ( \"sender@email.com\" )",
+            "title": ":from"
+        },
+        {
+            "location": "/api/#cc",
+            "text": "The address(es) to \"cc\" the message to. Multiple values must be seperated by a comma.  Syntax  msg : cc (   address [,   addressN ]   )   Parameters     Name  Description  Type      address  The \"cc\" address(es).  String     Examples  Single address:  --Address only  msg : cc ( \"user@email.com\" )  --With name  msg : cc ( \"Chris <user@email.com>\" )   Multiple addresses:  msg : cc ( \"user1@email.com\" ,   \"Jim <user2@email.com>\" )",
+            "title": ":cc"
+        },
+        {
+            "location": "/api/#bcc",
+            "text": "The address(es) to \"bcc\" the message to. Multiple values must be seperated by a comma.  Syntax  msg : bcc (   address [,   addressN ]   )   Parameters     Name  Description  Type      address  The \"bcc\" address(es).  String     Examples  Single address:  --Address only  msg : bcc ( \"user@email.com\" )  --With name  msg : bcc ( \"Chris <user@email.com>\" )   Multiple addresses:  msg : bcc ( \"user1@email.com\" ,   \"Jim <user2@email.com>\" )",
+            "title": ":bcc"
+        },
+        {
+            "location": "/api/#replyto",
+            "text": "Sets a specific reply-to address. If not set, the sender address is the default.  Syntax  msg : replyTo (   address   )   Parameters     Name  Description  Type      address  A specific reply-to address.  String     Example  msg : replyTo ( \"Support <support@email.com>\" )",
+            "title": ":replyTo"
+        },
+        {
+            "location": "/api/#subject",
+            "text": "The subject line for the email. The default is \"(no subject)\" if not provided.  Syntax  msg : subject (   subject_str   )   Parameters     Name  Description  Type      subject_str  The subject title.  String     Example  msg : subject ( \"A Super Email\" )",
+            "title": ":subject"
+        },
+        {
+            "location": "/api/#text",
+            "text": "The plain text version of the message body.  Syntax  msg : text (   message_str   )   Parameters     Name  Description  Type      message_str  A plain string message.  String     Example  msg : text ( \"Here is your plain information.\" )",
+            "title": ":text"
+        },
+        {
+            "location": "/api/#html",
+            "text": "The html version of the message body.  Syntax  msg : html (   message_html   )   Parameters     Name  Description  Type      message_html  An html string message.  String     Example  msg : html ( \"Here is your <b>bold</b> information.\" )",
+            "title": ":html"
+        },
+        {
+            "location": "/api/#tag",
+            "text": "Sets a specific tag for the email. Can be used for tracking in MailGun.  Syntax  msg : tag (   tag_str   )   Parameters     Name  Description  Type      tag_str  A string tag for tracking.  String     Example  msg : tag ( \"appuser\" )",
+            "title": ":tag"
+        },
+        {
+            "location": "/api/#requiretls",
+            "text": "Force MailGun to use TLS when sending the message. Defaults to  false .  Syntax  msg : requireTls (   bool   )   Parameters     Name  Description  Type      bool  Whether to enable TLS for this message.  Boolean     Example  msg : requireTls ( true )",
+            "title": ":requireTls"
+        },
+        {
+            "location": "/api/#skipverification",
+            "text": "Skip certificate verification when using TLS. Defaults to  false .  Syntax  msg : skipVerification (   bool   )   Parameters     Name  Description  Type      bool  Whether to skip verification in TLS.  Boolean     Example  msg : skipVerification ( true )",
+            "title": ":skipVerification"
+        },
+        {
+            "location": "/api/#testmode",
+            "text": "Used for debugging in MailGun. Defaults to  false .  Syntax  msg : testMode (   bool   )   Parameters     Name  Description  Type      bool  Whether to enable test mode.  Boolean     Example  msg : testMode ( true )",
+            "title": ":testMode"
+        },
+        {
+            "location": "/api/#send",
+            "text": "Send the final message via MailGun.  Syntax  msg : send (   [ listener ]   )   Parameters     Name  Description  Type  Required      listener  A network listener function.  Function  N     Example  local   function   onSendResponse (   evt   ) \n   if   evt . isError   then \n     print ( evt . error ) \n   else \n     print ( evt . response ) \n   end  end  msg : send ( onSendResponse )",
+            "title": ":send"
+        },
+        {
+            "location": "/example/",
+            "text": "-- Require the MailGun Sender plugin\n\n\nlocal\n \nmailgun\n \n=\n \nrequire\n \n\"plugin.mailgun-sender\"\n\n\n\n-- Set your MailGun credentials\n\n\nlocal\n \nmg_key\n \n=\n \n\"<mailgun-api-key>\"\n\n\nlocal\n \nmg_domain\n \n=\n \n\"<mailgun-sending-domain>\"\n\n\n\n-- Create a new MailGun Sender message object\n\n\nlocal\n \nmsg\n \n=\n \nmailgun\n.\nnew\n(\nmg_key\n,\n \nmg_domain\n)\n\n\n\n-- Populate the message to be sent\n\n\nmsg\n:\nto\n(\n\"Chris <from-email-address>\"\n)\n\n\nmsg\n:\nfrom\n(\n\"<to-email-address>\"\n)\n\n\nmsg\n:\nsubject\n(\n\"This is a MailGun message.\"\n)\n\n\nmsg\n:\ntext\n(\n\"This is the text version of the email.\"\n)\n\n\nmsg\n:\nhtml\n(\n\"<b>This is the html version of the email.</b>\"\n)\n\n\n\n-- Create a \"send\" response listener\n\n\nlocal\n \nfunction\n \nonSendResult\n(\n \nevt\n \n)\n\n  \nif\n \nevt\n.\nisError\n \nthen\n\n    \nprint\n(\nevt\n.\nerror\n)\n\n  \nelse\n\n    \nprint\n(\nevt\n.\nresponse\n)\n\n  \nend\n\n\nend\n\n\n\n-- Send the message\n\n\nmsg\n:\nsend\n(\n \nonSendResult\n \n)",
+            "title": "Example"
+        },
+        {
+            "location": "/about/",
+            "text": "Code and documentation \u00a92017 C. Byerley (\ndevelephant\n).",
+            "title": "About"
+        }
+    ]
+}

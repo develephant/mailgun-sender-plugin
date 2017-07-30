@@ -1,7 +1,7 @@
 site_name: MailGun Sender
 pages:
   - 'Introduction': 'index.md'
-  - 'API': 'api.md'
+  - 'Plugin API': 'api.md'
   - 'Example': 'example.md'
   - 'About': 'about.md'
 copyright: "&copy;2017 C. Byerley - develephant.com"
