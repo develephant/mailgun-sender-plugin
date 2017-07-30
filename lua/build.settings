@@ -16,6 +16,13 @@ settings =
   {
     ["plugin.mailgun-sender"] = { publisherId = "com.develephant" },
   },
+	android =
+	{
+		usesPermissions =
+		{
+			"android.permission.INTERNET",
+		},
+	},
 	iphone =
 	{
 		plist =

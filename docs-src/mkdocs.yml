@@ -1,4 +1,4 @@
-site_name: MailGun Sender
+site_name: Mailgun Sender
 pages:
   - 'Introduction': 'index.md'
   - 'Plugin API': 'api.md'

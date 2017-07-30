@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Example - MailGun Sender</title>
+  <title>Example - Mailgun Sender</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
@@ -36,7 +36,7 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
       <div class="wy-side-nav-search">
-        <a href=".." class="icon icon-home"> MailGun Sender</a>
+        <a href=".." class="icon icon-home"> Mailgun Sender</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -89,7 +89,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="..">MailGun Sender</a>
+        <a href="..">Mailgun Sender</a>
       </nav>
 
       
@@ -111,20 +111,20 @@
           <div role="main">
             <div class="section">
               
-                <div class="codehilite"><pre><span></span><span class="c1">-- Require the MailGun Sender plugin</span>
+                <div class="codehilite"><pre><span></span><span class="c1">-- Require the Mailgun Sender plugin</span>
 <span class="kd">local</span> <span class="n">mailgun</span> <span class="o">=</span> <span class="nb">require</span> <span class="s2">&quot;plugin.mailgun-sender&quot;</span>
 
-<span class="c1">-- Set your MailGun credentials</span>
+<span class="c1">-- Set your Mailgun credentials</span>
 <span class="kd">local</span> <span class="n">mg_key</span> <span class="o">=</span> <span class="s2">&quot;&lt;mailgun-api-key&gt;&quot;</span>
 <span class="kd">local</span> <span class="n">mg_domain</span> <span class="o">=</span> <span class="s2">&quot;&lt;mailgun-sending-domain&gt;&quot;</span>
 
-<span class="c1">-- Create a new MailGun Sender message object</span>
+<span class="c1">-- Create a new Mailgun Sender message object</span>
 <span class="kd">local</span> <span class="n">msg</span> <span class="o">=</span> <span class="n">mailgun</span><span class="p">.</span><span class="n">new</span><span class="p">(</span><span class="n">mg_key</span><span class="p">,</span> <span class="n">mg_domain</span><span class="p">)</span>
 
 <span class="c1">-- Populate the message to be sent</span>
 <span class="n">msg</span><span class="p">:</span><span class="n">to</span><span class="p">(</span><span class="s2">&quot;Chris &lt;from-email-address&gt;&quot;</span><span class="p">)</span>
 <span class="n">msg</span><span class="p">:</span><span class="n">from</span><span class="p">(</span><span class="s2">&quot;&lt;to-email-address&gt;&quot;</span><span class="p">)</span>
-<span class="n">msg</span><span class="p">:</span><span class="n">subject</span><span class="p">(</span><span class="s2">&quot;This is a MailGun message.&quot;</span><span class="p">)</span>
+<span class="n">msg</span><span class="p">:</span><span class="n">subject</span><span class="p">(</span><span class="s2">&quot;This is a Mailgun message.&quot;</span><span class="p">)</span>
 <span class="n">msg</span><span class="p">:</span><span class="n">text</span><span class="p">(</span><span class="s2">&quot;This is the text version of the email.&quot;</span><span class="p">)</span>
 <span class="n">msg</span><span class="p">:</span><span class="n">html</span><span class="p">(</span><span class="s2">&quot;&lt;b&gt;This is the html version of the email.&lt;/b&gt;&quot;</span><span class="p">)</span>
 

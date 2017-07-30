@@ -1,11 +1,11 @@
 
-# MailGun Sender
+# Mailgun Sender
 
 ---
 
 ## new
 
-Create a new MailGun message object.
+Create a new Mailgun message object.
 
 __Syntax__
 
@@ -21,8 +21,8 @@ __Parameters__
 
 |Name|Description|Type|Required|
 |----|-----------|----|--------|
-|key|Your MailGun API key.|String|Y|
-|domain|Your verified MailGun domain.|String|Y|
+|key|Your Mailgun API key.|String|Y|
+|domain|Your verified Mailgun domain.|String|Y|
 
 __Example__
 
@@ -275,7 +275,7 @@ msg:html("Here is your <b>bold</b> information.")
 
 ## :tag
 
-Sets a specific tag for the email. Can be used for tracking in MailGun.
+Sets a specific tag for the email. Can be used for tracking in Mailgun.
 
 __Syntax__
 
@@ -299,7 +299,7 @@ msg:tag("appuser")
 
 ## :requireTls
 
-Force MailGun to use TLS when sending the message. Defaults to _false_.
+Force Mailgun to use TLS when sending the message. Defaults to _false_.
 
 __Syntax__
 
@@ -347,7 +347,7 @@ msg:skipVerification(true)
 
 ## :testMode
 
-Used for debugging in MailGun. Defaults to _false_.
+Used for debugging in Mailgun. Defaults to _false_.
 
 __Syntax__
 
@@ -371,7 +371,7 @@ msg:testMode(true)
 
 ## :send
 
-Send the final message via MailGun.
+Send the final message via Mailgun.
 
 __Syntax__
 

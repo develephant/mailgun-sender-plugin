@@ -1,15 +1,15 @@
 ![logo](imgs/logo256.png)
 
-# MailGun Sender
+# Mailgun Sender
 
-___A simple [MailGun](https://www.mailgun.com/) plugin for sending email with [Corona](https://coronalabs.com).___
+___A simple [Mailgun](https://www.mailgun.com/) plugin for sending email with [Corona](https://coronalabs.com).___
 
 !!! note
-    This plugin provides limited support for the MailGun API. In particular, there is no support for attachments or inline images.
+    This plugin provides limited support for the Mailgun API. In particular, there is no support for attachments.
     
 ## Get the Plugin
 
-You will need the __MailGun Sender__ plugin available in the __[Corona Marketplace](https://marketplace.coronalabs.com/plugin/mailgun-sender)__.
+You will need the __Mailgun Sender__ plugin available in the __[Corona Marketplace](https://marketplace.coronalabs.com/plugin/mailgun-sender)__.
 
 ## Add the Plugin
 
@@ -36,4 +36,4 @@ In your project "require" the plugin:
 local mailgun = require("plugin.mailgun-sender")
 ```
 
-You're now ready to use the __MailGun Sender__ plugin in your project.
+You're now ready to use the __Mailgun Sender__ plugin in your project.
