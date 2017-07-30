@@ -31,11 +31,6 @@ api.data = {
   ["h:Reply-To"] = nil
 }
 
-function api:init( key, domain )
-  self.key = key
-  self.domain = domain
-end
-
 function api:to( ... )
   local addresses = { ... }
   self.data.to = table.concat(addresses, ",")
@@ -143,10 +138,7 @@ function lib.new( key, domain )
   assert(key, "An API key value is required to send a message.")
   assert(domain, "A domain value is required to send a message.")
 
-  local msgObj = setmetatable({}, {__index=api})
-
-  msgObj.key = key
-  msgObj.domain = domain
+  local msgObj = setmetatable({key=key, domain=domain}, {__index=api})
 
   return msgObj
 end
