@@ -1,3 +1,0 @@
-You will need an account at MailGun (https://www.mailgun.com). You can test using the sandbox domain.
-
-Documentation: https://develephant.github.io/mailgun-sender-plugin/
