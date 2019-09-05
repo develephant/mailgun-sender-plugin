@@ -10,7 +10,7 @@ Create a new Mailgun message object.
 __Syntax__
 
 ```lua
-mailgun.new( key, domain )
+mailgun.new( key, domain[, region] )
 ```
 
 __Returns__
@@ -23,11 +23,20 @@ __Parameters__
 |----|-----------|----|--------|
 |key|Your Mailgun API key.|String|Y|
 |domain|Your verified Mailgun domain.|String|Y|
+|region|API region endpoint. Possible options are `US` and `EU`. The region is set to `US` by default.|String|N|
 
 __Example__
 
+___US endpoint___:
+
 ```lua
 local msg = mailgun.new( "key-abcdef12345", "verified.mailgun.domain" )
+```
+
+___EU endpoint___:
+
+```lua
+local msg = mailgun.new( "key-abcdef12345", "verified.mailgun.domain", "EU" )
 ```
 
 __Note__
